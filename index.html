@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALLIN MERCH - Премиум баскетбольный мерч</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="BALLIN MERCH" class="logo-img">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#products" class="nav-link">Товары</a></li>
+                <li><a href="#about" class="nav-link">О нас</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">PREMIUM COLLECTION</div>
+            <h1 class="hero-title">
+                <span class="title-line" data-text="BALLIN">BALLIN</span>
+                <span class="title-line" data-text="MERCH">MERCH</span>
+            </h1>
+            <p class="hero-subtitle">Премиум баскетбольный мерч для настоящих фанатов</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="297">0</div>
+                    <div class="stat-label">Товаров</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Категории</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Качество</div>
+                </div>
+            </div>
+            <a href="#products" class="cta-button">
+                <span>Смотреть коллекцию</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="image-grid">
+                <div class="grid-item" data-tilt>
+                    <div class="grid-item-inner">
+                        <img src="images/kobe.png" alt="Kobe" loading="lazy">
+                        <div class="grid-overlay">
+                            <span>KOBE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item" data-tilt>
+                    <div class="grid-item-inner">
+                        <img src="images/jordan_1.png" alt="Jordan" loading="lazy">
+                        <div class="grid-overlay">
+                            <span>JORDAN</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item" data-tilt>
+                    <div class="grid-item-inner">
+                        <img src="images/young_lebron.png" alt="LeBron" loading="lazy">
+                        <div class="grid-overlay">
+                            <span>LEBRON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">КОЛЛЕКЦИЯ</span>
+                    <span class="title-text">КОЛЛЕКЦИЯ</span>
+                </h2>
+                <p class="section-subtitle">Выберите свою категорию</p>
+            </div>
+            <div class="filter-buttons" id="filterButtons"></div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">О нас</h2>
+                    <p class="about-description">
+                        BALLIN MERCH — это премиальный бренд баскетбольного мерча, созданный для настоящих ценителей игры. 
+                        Мы объединяем страсть к баскетболу с современным дизайном и качественными материалами.
+                    </p>
+                    <p class="about-description">
+                        Каждая вещь в нашей коллекции — это дань уважения легендам баскетбола и современным звездам. 
+                        От классических джерси до стильных худи — мы создаем одежду, которая говорит о вашей любви к игре.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="images/the_goats.png" alt="The GOATs" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>info@ballinmerch.ru</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Телефон</h3>
+                        <p>+7 (999) 123-45-67</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Социальные сети</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Telegram</a>
+                            <a href="#" class="social-link">VK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="BALLIN MERCH" class="logo-img">
+                </div>
+                <p class="footer-text">&copy; 2024 BALLIN MERCH. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Product">
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <div id="modalDescription" class="modal-description"></div>
+                    <button class="buy-button"><span>Купить</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
