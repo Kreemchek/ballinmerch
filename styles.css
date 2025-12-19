@@ -1188,7 +1188,9 @@ body {
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
+        /* 2 товара в ряд на мобилках */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .filter-buttons {
@@ -1197,7 +1199,10 @@ body {
         overflow-x: auto;
         justify-content: flex-start;
         padding-bottom: 0.75rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
+    .filter-buttons::-webkit-scrollbar { display: none; }
 
     .filter-btn {
         padding: 0.75rem 1.25rem;
@@ -1220,5 +1225,43 @@ body {
 
     .price-old {
         font-size: 1rem;
+    }
+
+    .product-title {
+        font-size: 1.05rem;
+        letter-spacing: 0.6px;
+        line-height: 1.1;
+    }
+
+    .product-category {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.75rem;
+    }
+
+    .product-badge {
+        top: 10px;
+        left: 10px;
+        font-size: 0.7rem;
+        padding: 0.28rem 0.55rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    .price-current {
+        font-size: 1.35rem;
+    }
+
+    .price-old {
+        font-size: 0.95rem;
     }
 }
