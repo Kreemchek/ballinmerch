@@ -96,12 +96,32 @@ function isCertificate(p) {
 
 async function loadCatalog() {
     try {
-        const res = await fetch('catalog.json', { cache: 'no-store' });
-        if (!res.ok) throw new Error(`Failed to load catalog.json: ${res.status} ${res.statusText}`);
-        const data = await res.json();
-        if (!Array.isArray(data)) throw new Error('catalog.json is not an array');
-        return data;
+        // Try absolute path first (for Vercel), then relative
+        const paths = ['/catalog.json', './catalog.json', 'catalog.json'];
+        let lastError = null;
+        
+        for (const path of paths) {
+            try {
+                const res = await fetch(path, { cache: 'no-store' });
+                if (!res.ok) {
+                    lastError = new Error(`Failed to load ${path}: ${res.status} ${res.statusText}`);
+                    continue;
+                }
+                const data = await res.json();
+                if (!Array.isArray(data)) {
+                    lastError = new Error(`${path} is not an array`);
+                    continue;
+                }
+                console.log(`Loaded ${data.length} products from ${path}`);
+                return data;
+            } catch (e) {
+                lastError = e;
+                continue;
+            }
+        }
+        throw lastError || new Error('Failed to load catalog from all paths');
     } catch (e) {
+        console.error('Catalog load error:', e);
         throw e;
     }
 }
